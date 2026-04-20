@@ -1,0 +1,15 @@
+services:
+  runtimed-node:
+    build: .
+    restart: always
+    network_mode: host
+
+    # env_file: .env
+    environment:
+      SSL_CERT_FILE: "/var/lib/runtimed-node/ssl_cert.pem"
+      SSL_KEY_FILE: "/var/lib/runtimed-node/ssl_key.pem"
+      # SSL_CLIENT_CERT_FILE: "/var/lib/runtimed-node/ssl_client_cert.pem"
+      # SERVICE_PROTOCOL: "rest"
+
+    volumes:
+      - /var/lib/runtimed-node:/var/lib/runtimed-node

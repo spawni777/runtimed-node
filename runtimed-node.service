@@ -1,0 +1,11 @@
+[Unit]
+Description=Runtimed node control service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/env python3 /var/lib/runtimed-node/main.py
+Restart=on-failure
+WorkingDirectory=/var/lib/runtimed-node
+
+[Install]
+WantedBy=multi-user.target
